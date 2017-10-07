@@ -12,6 +12,8 @@ void mysh_parse_command(const char* command,
 	*argc =0;
 	*argv = (char**)malloc(sizeof(char));
 	strcpy(temp,command);
+	int length=strlen(temp);
+	*(temp+length-1)=0;
 	tok=strtok(temp," ");
 	while(tok!=NULL){
 		(*(*argv+i))=tok;
